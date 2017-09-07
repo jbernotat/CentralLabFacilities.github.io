@@ -11,11 +11,13 @@
     <title>Summer School 2017 Pepper Tutorial</title>
 </head>
 <body>
-<h1>Okay! Hello ... let's go</h1>
 
-<p>Open a terminal of your choice (Terminator, XTERM, whatever you like...)</p>
+<div style="width:50%; margin-left:50%">
+    <h1>Okay! Hello ... let's go</h1>
 
-<pre>
+    <p>Open a terminal of your choice (Terminator, XTERM, whatever you like...)</p>
+
+    <pre>
     touch $HOME/.netrc
 </pre>
 
@@ -47,14 +49,17 @@
     /media/local_data/citk/start_jenkins
 </pre>
 
-<p>Well, now open a web browser of your choice and go to: <a target="_blank" href="https://localhost:8080/">CLICK HERE!</a>. BTW,
-the CI Server is running on the machine in front of you. You should see something like this:</p>
+<p>Well, now open a web browser of your choice and go to: <a target="_blank" href="https://localhost:8080/">CLICK
+   HERE!</a>. BTW, the CI Server is running on the machine in front of you. You should see something like this:
+</p>
 
-<img src="images/ci_server_started.png" />
+<img src="images/ci_server_started.png"/>
 
 <p>Login to the Jenkins (top right corner) use the user: citec and password: citec</p>
-<p>Yeah, back to the terminal open another terminal please, <b>don't</b> close the first one since the Jenkins CI Server in running inside that terminal...</p>
-<p>Now you'll generate all the necessary build jobs that will eventually deploy (install) the entire system for you AUTOMAGICALLY.</p>
+<p>Yeah, back to the terminal open another terminal please, <b>don't</b> close the first one since the Jenkins CI
+   Server in running inside that terminal...</p>
+<p>Now you'll generate all the necessary build jobs that will eventually deploy (install) the entire system for you
+   AUTOMAGICALLY.</p>
 
 <pre>
     cd /media/local_data/citk/jenkins
@@ -65,15 +70,17 @@ the CI Server is running on the machine in front of you. You should see somethin
 </pre>
 
 <p>What happens now is that our magic works. After this command has finished (which could take a while) go
-back to the <a target="_blank" href="https://localhost:8080/">JENKINS</a>. You should see a lot of new jobs
-that are grey (they haven't been built yet). YES! Just build them. You don't need to trigger them all manually,
-just look for the build job <b>pepper-robocup-nightly-toolkit-orchestration</b> and click on the tiny <b>clock</b>
-icon to the right.</p>
+        back to the <a target="_blank" href="https://localhost:8080/">JENKINS</a>. You should see a lot of new jobs
+        that are grey (they haven't been built yet). YES! Just build them. You don't need to trigger them all manually,
+        just look for the build job <b>pepper-robocup-nightly-toolkit-orchestration</b> and click on the tiny
+        <b>clock</b> icon to the right.
+</p>
 
-<p>Now the entire system is build and deployed on your system. When it's done you should see all job become
-<b><span style="color:blue;">BLUE</span></b>. You are now done. For further instructions, ask Florian.</p>
+<p>Now the entire system is build and deployed on your system. When it's done you should see all job become <b><span style="color:blue;">BLUE</span></b>. You are now done. For further instructions, ask Florian.</p>
 
-<img src="images/jenkins_done.png" />
+<img src="images/jenkins_done.png"/>
+
+</div>
 
 </body>
 </html>
