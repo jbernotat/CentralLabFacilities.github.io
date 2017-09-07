@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summer School 2017 Pepper Tutorial</title>
+</head>
+<body>
+<h1>Okay! Hello ... let's go</h1>
+
+<p>Open a terminal of your choice (Terminator, XTERM, whatever you like...)</p>
+
+<pre>
+    touch $HOME/.netrc
+</pre>
+
+<pre>
+    gedit $HOME/.netrc
+</pre>
+
+<p>Add the following three lines to the file (.netrc). Florian will tell you what to use instead of 'XXX'</p>
+
+<pre>
+    machine projects.cit-ec.uni-bielefeld.de
+    login XXX
+    password XXX
+</pre>
+
+<p>Save the file (CTRL+s), close gedit.</p>
+<p>In the shell again, clone the CITK recipe repository as shown below.</p>
+
+<pre>
+    cd /media/local_data/citk/
+    mkdir -p dist && cd dist
+    git clone https://opensource.cit-ec.de/git/citk .
+</pre>
+
+<p>Okay, fine. Now you have all the recipes in order to install the Pepper System.</p>
+<p>Next you need to start the Jenkins CI Server. We already deployed one for your convenience :D</p>
+
+<pre>
+    /media/local_data/citk/start_jenkins
+</pre>
+
+<p>Well, now open a web browser of your choice and go to: <a target="_blank" href="https://localhost:8080/">CLICK HERE!</a>. BTW,
+the CI Server is running on the machine in front of you. You should see something like this:</p>
+
+<img src="images/ci_server_started.png" />
+
+<p>Login to the Jenkins (top right corner) use the user: citec and password: citec</p>
+<p>Yeah, back to the terminal open another terminal please, <b>don't</b> close the first one since the Jenkins CI Server in running inside that terminal...</p>
+<p>Now you'll generate all the necessary build jobs that will eventually deploy (install) the entire system for you AUTOMAGICALLY.</p>
+
+<pre>
+    cd /media/local_data/citk/jenkins
+    ./job-configurator --on-error=continue \
+    -d /media/local_data/citk/dist/distributions/pepper-robocup-nightly.distribution \
+    -m toolkit -D toolkit.volume=/media/local_data/citk/systems -u citec -p citec \
+    -D make.threads=4 -D cudagen=Pascal  --cache-directory=/tmp/cache_dir
+</pre>
+
+<p>What happens now is that our magic works. After this command has finished (which could take a while) go
+back to the <a target="_blank" href="https://localhost:8080/">JENKINS</a>. You should see a lot of new jobs
+that are grey (they haven't been built yet). YES! Just build them. You don't need to trigger them all manually,
+just look for the build job <b>pepper-robocup-nightly-toolkit-orchestration</b> and click on the tiny <b>clock</b>
+icon to the right.</p>
+
+<p>Now the entire system is build and deployed on your system. When it's done you should see all job become
+<b><span style="color:blue;">BLUE</span></b>. You are now done. For further instructions, ask Florian.</p>
+
+<img src="images/jenkins_done.png" />
+
+</body>
+</html>
