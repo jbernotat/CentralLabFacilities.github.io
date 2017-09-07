@@ -66,7 +66,7 @@
     ./job-configurator --on-error=continue \
     -d /media/local_data/citk/dist/distributions/pepper-robocup-nightly.distribution \
     -m toolkit -D toolkit.volume=/media/local_data/citk/systems -u citec -p citec \
-    -D make.threads=4 -D cudagen=Pascal  --cache-directory=/tmp/cache_dir
+    -D make.threads=6 -D cudagen=Pascal  --cache-directory=/tmp/cache_dir
 </pre>
 
 <p>What happens now is that our magic works. After this command has finished (which could take a while) go
