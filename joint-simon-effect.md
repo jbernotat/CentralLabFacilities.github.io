@@ -116,7 +116,7 @@ mkdir -p $HOME/citk/dist && cd $HOME/citk/dist
 git clone https://opensource.cit-ec.de/git/citk .
 </pre>
 
-In this step please substitute "{YOUR_USERNAME}" and {YOUR_PASSWORD} with the credentials in the "./create_user" (see section above)
+In the next step please substitute "{YOUR_USERNAME}" and {YOUR_PASSWORD} with the credentials in the "./create_user" (see section above)
 step and execute the command line below.
 
 <pre>
@@ -154,8 +154,8 @@ sudo apt-get install [list of reported packages]
 E.g.: sudo apt-get install python-requests python-sphinx wmctrl libssl-dev libffi-dev libzmq-dev libxml2-dev libxslt1-dev zlib1g-dev python-tk
 </pre>
 
-Hint: You can safely ignore other warnings (other mentioned problems). What you cannot ignore are ERRORS.
-In this unlikely case something is wrong in general. Please contact us please.
+Hint: You can safely ignore other warnings (other mentioned problems). 
+In the unlikely case something is wrong in general --- please contact us.
 
 Now, go back to your browser: https://localhost:8080/?auto_refresh=true  You should see this:
  
