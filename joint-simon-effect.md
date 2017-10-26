@@ -100,7 +100,7 @@ After you've finished the above tutorial you should see something similar to the
 Please login (top right) using the credentials you choose when executing the "./create_user" step. **Don't** close the terminal
 in which your Jenkins is running. You are all set for now.
 
-[empty_jenkins]: https://toolkit.cit-ec.uni-bielefeld.de/sites/toolkit.cit-ec.uni-bielefeld.de/files/tutorial_jenkins_new.jpg "An empty Jenkins instance"
+![empty_jenkins]: (https://toolkit.cit-ec.uni-bielefeld.de/sites/toolkit.cit-ec.uni-bielefeld.de/files/tutorial_jenkins_new.jpg)
 
 ## Generate Distribution and Deploy
 
@@ -155,7 +155,7 @@ In this unlikely case something is wrong in general. Please contact us please.
 
 Now, go back to your browser: [localhost]: https://localhost:8080/?auto_refresh=true  You should see this:
  
-[jenkins_done]: https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/remote_lab_jobs.png "Jenkins done"
+![jenkins_done]: (https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/remote_lab_jobs.png)
 
 In order to deploy (install) the software system, the **only** thing you need to do is to click the "stopwatch" icon
 next to the build job "remotelab-nightly-toolkit-orchestration".
@@ -163,7 +163,7 @@ The Jenkins will guide you to a next page that displays a dialog "ageLimit ..." 
 In order to get back to the overview page, simply click the top left Jenkins icon.
 
 
-[jenkins_trigger]: https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/trigger_job.png "Trigger Job."
+![jenkins_trigger]: (https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/trigger_job.png)
 
 Our toolchain will now install all software components for you **automagically**. When it's done (this can take up to 10 minutes), 
 all, except for one, jobs in your Jenkins instance should turn from grey (haven't been built yet) to blue (successfully installed). 
@@ -172,14 +172,14 @@ There will be still **TWO** "grey" jobs: "runnable-remotelab-nao-physical-demo-m
 These jobs will be used later on to actually **RUN** your experiment. 
 How cool is that? Leave this part for now, we will setup the physical part now.
 
-[jenkins_trigger]: https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/remote-lab-done.png "All done."
+![jenkins_trigger]: (https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/remote-lab-done.png)
 
 # Physical Experiment Setup
 
 Because two NAOS were available at Bielefeld, a symmetrical setup was installed in an otherwise empty office. The two monitors 
 were connected to the same workstation. The displays were set to mirror mode, showing the same image. 
 
-[setup_twonaos]: https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/setup_jse_twonaos.png "Symmetrical setup with two Naos."
+![setup_twonaos]: (https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/setup_jse_twonaos.png)
 
 Because having two NAOs is not given in every laboratory, we will describe a setup using just one NAO in the following. 
 The setup is easily adjustable by either moving the robot from one side to another depending on the random position condition or just placing it to the right or left of the participant.
@@ -240,7 +240,7 @@ The job will keep running until you **explicitly** stop it using the "[x]" butto
 
 When you're done for the day, you may shut down everything (if you want to). When you
 continue the next day, you just need to setup the NAO (if it has been moved), start the Jenkins using
-the "./start_jenkins" script like you have done it before and trigger the "runnable-remotelab-nao-physical-demo-master-runnable-toolkit-remotelab-nightly"*[]: 
+the "./start_jenkins" script like you have done it before and trigger the "runnable-remotelab-nao-physical-demo-master-runnable-toolkit-remotelab-nightly"
 Voila, you're all set.
 
 # Subjects
