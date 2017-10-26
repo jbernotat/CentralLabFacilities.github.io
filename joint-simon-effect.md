@@ -173,7 +173,7 @@ Our toolchain will now install all required software components for you **automa
 all, except for two, jobs in your Jenkins instance should turn from grey (haven't been built yet) to blue (successfully installed). 
 
 There will be  **TWO** "grey" jobs: "runnable-remotelab-nao-physical-demo-master-runnable-toolkit-remotelab-nightly" and
-"runnable-remotelab-jsp-nao-calibration-master-runnable-toolkit-remotelab-nightly". 
+"runnable-remotelab-jsp-nao-calibration-master-runnable-toolkit-remotelab-nightly" (is missing in the image below, don't worry...). 
 These jobs will be used later on to actually **RUN** your experiment. 
 How cool is that? Leave this part for now, we will setup the physical part now.
 
