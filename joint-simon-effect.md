@@ -157,7 +157,7 @@ E.g.: sudo apt-get install python-requests python-sphinx wmctrl libssl-dev libff
 Hint: You can safely ignore other warnings (other mentioned problems). 
 In the unlikely case something is wrong in general --- please contact us.
 
-Now, go back to your browser: https://localhost:8080/?auto_refresh=true  You should see this:
+Now, go back to your browser: https://localhost:8080/?auto_refresh=true  You should see something similar to this:
  
 ![jenkins_done](https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/remote_lab_jobs.png)
 
@@ -169,9 +169,10 @@ In order to get back to the overview page, simply click the top left Jenkins ico
 
 ![jenkins_trigger](https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/trigger_job.png)
 
-Our toolchain will now install all software components for you **automagically**. When it's done (this can take up to 10 minutes), 
-all, except for one, jobs in your Jenkins instance should turn from grey (haven't been built yet) to blue (successfully installed). 
-There will be still **TWO** "grey" jobs: "runnable-remotelab-nao-physical-demo-master-runnable-toolkit-remotelab-nightly" and
+Our toolchain will now install all required software components for you **automagically**. When it's done (this can take up to 10 minutes), 
+all, except for two, jobs in your Jenkins instance should turn from grey (haven't been built yet) to blue (successfully installed). 
+
+There will be  **TWO** "grey" jobs: "runnable-remotelab-nao-physical-demo-master-runnable-toolkit-remotelab-nightly" and
 "runnable-remotelab-jsp-nao-calibration-master-runnable-toolkit-remotelab-nightly". 
 These jobs will be used later on to actually **RUN** your experiment. 
 How cool is that? Leave this part for now, we will setup the physical part now.
