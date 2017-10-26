@@ -180,8 +180,6 @@ How cool is that? Leave this part for now, we will setup the physical part now.
 Because two NAOS were available at Bielefeld, a symmetrical setup was installed in an otherwise empty office. The two monitors 
 were connected to the same workstation. The displays were set to mirror mode, showing the same image. 
 
-![setup_twonaos](https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/setup_jse_twonaos.png)
-
 Because having two NAOs is not given in every laboratory, we will describe a setup using just one NAO in the following. 
 The setup is easily adjustable by either moving the robot from one side to another depending on the random position condition or just placing it to the right or left of the participant.
 The viewing distance is taken from the original Stenzel paper (approx. 80cm). The NAO kneels (predefined resting posture by the manufacturer) 
