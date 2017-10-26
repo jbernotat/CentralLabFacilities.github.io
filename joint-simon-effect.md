@@ -94,11 +94,14 @@ When this process is finished, please proceed.
 Note: For the following steps, please use the **Firefox** browser shipped with Ubuntu.
 We are using the CITK [4] to bootstrap your software experiment environment, please follow https://toolkit.cit-ec.uni-bielefeld.de/tutorials/bootstrapping
 tutorial (you might need to accept a SSL certificate when accessing the referenced web site, the browser might warn you).
-**Stop** after "Step #3: Expected Result", do **not** proceed to the next tutorial mentioned (Installing a Distribution) on the web site. 
+
+**Stop** after "Step #3: Expected Result", do **not** proceed to the next tutorial mentioned on the web site (Installing a Distribution). 
 You will need to execute the steps in the grey boxes.
 
 After you've finished the above tutorial you should see something similar to the picture below when accessing your localhost https://localhost:8080/?auto_refresh=true 
-Please login (top right) using the credentials you choose when executing the "./create_user" step. **Don't** close the terminal
+
+
+Please login (top right corner) using the credentials you chose when executing the "./create_user" step. **Don't** close the terminal
 in which your Jenkins is running. You are all set for now.
 
 ![empty_jenkins](https://toolkit.cit-ec.uni-bielefeld.de/sites/toolkit.cit-ec.uni-bielefeld.de/files/tutorial_jenkins_new.jpg)
