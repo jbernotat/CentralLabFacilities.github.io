@@ -91,16 +91,17 @@ When this process is finished, please proceed.
 
 ## Bootstrapping the CITK
 
-We are using the CITK [4] to bootstrap your software experiment environment, please follow [THIS]: https://toolkit.cit-ec.uni-bielefeld.de/tutorials/bootstrapping
+Note: For the following steps, please use the **Firefox** browser shipped with Ubuntu.
+We are using the CITK [4] to bootstrap your software experiment environment, please follow https://toolkit.cit-ec.uni-bielefeld.de/tutorials/bootstrapping
 tutorial (you might need to accept a SSL certificate when accessing the referenced web site, the browser might warn you).
 **Stop** after "Step #3: Expected Result", do **not** proceed to the next tutorial mentioned (Installing a Distribution) on the web site. 
 You will need to execute the steps in the grey boxes.
 
-After you've finished the above tutorial you should see something similar to the picture below when accessing your [localhost]: https://localhost:8080/?auto_refresh=true 
+After you've finished the above tutorial you should see something similar to the picture below when accessing your localhost https://localhost:8080/?auto_refresh=true 
 Please login (top right) using the credentials you choose when executing the "./create_user" step. **Don't** close the terminal
 in which your Jenkins is running. You are all set for now.
 
-![empty_jenkins]: (https://toolkit.cit-ec.uni-bielefeld.de/sites/toolkit.cit-ec.uni-bielefeld.de/files/tutorial_jenkins_new.jpg)
+![empty_jenkins](https://toolkit.cit-ec.uni-bielefeld.de/sites/toolkit.cit-ec.uni-bielefeld.de/files/tutorial_jenkins_new.jpg)
 
 ## Generate Distribution and Deploy
 
@@ -153,9 +154,9 @@ E.g.: sudo apt-get install python-requests python-sphinx wmctrl libssl-dev libff
 Hint: You can safely ignore other warnings (other mentioned problems). What you cannot ignore are ERRORS.
 In this unlikely case something is wrong in general. Please contact us please.
 
-Now, go back to your browser: [localhost]: https://localhost:8080/?auto_refresh=true  You should see this:
+Now, go back to your browser: https://localhost:8080/?auto_refresh=true  You should see this:
  
-![jenkins_done]: (https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/remote_lab_jobs.png)
+![jenkins_done](https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/remote_lab_jobs.png)
 
 In order to deploy (install) the software system, the **only** thing you need to do is to click the "stopwatch" icon
 next to the build job "remotelab-nightly-toolkit-orchestration".
@@ -163,7 +164,7 @@ The Jenkins will guide you to a next page that displays a dialog "ageLimit ..." 
 In order to get back to the overview page, simply click the top left Jenkins icon.
 
 
-![jenkins_trigger]: (https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/trigger_job.png)
+![jenkins_trigger](https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/trigger_job.png)
 
 Our toolchain will now install all software components for you **automagically**. When it's done (this can take up to 10 minutes), 
 all, except for one, jobs in your Jenkins instance should turn from grey (haven't been built yet) to blue (successfully installed). 
@@ -172,14 +173,14 @@ There will be still **TWO** "grey" jobs: "runnable-remotelab-nao-physical-demo-m
 These jobs will be used later on to actually **RUN** your experiment. 
 How cool is that? Leave this part for now, we will setup the physical part now.
 
-![jenkins_trigger]: (https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/remote-lab-done.png)
+![jenkins_trigger](https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/remote-lab-done.png)
 
 # Physical Experiment Setup
 
 Because two NAOS were available at Bielefeld, a symmetrical setup was installed in an otherwise empty office. The two monitors 
 were connected to the same workstation. The displays were set to mirror mode, showing the same image. 
 
-![setup_twonaos]: (https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/setup_jse_twonaos.png)
+![setup_twonaos](https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/setup_jse_twonaos.png)
 
 Because having two NAOs is not given in every laboratory, we will describe a setup using just one NAO in the following. 
 The setup is easily adjustable by either moving the robot from one side to another depending on the random position condition or just placing it to the right or left of the participant.
@@ -209,7 +210,7 @@ the table with e.g. tape. Additionally, you have to set the robot to a stable hi
 Remember the approximate angle. You can e.g. align the back of the Nao with a book you put on the table for setup purposes. In the calibration procedure there are four postures recorded : _prepose_, _safepose_, _keyrelease_ and _keypress_. 
 The posture recording is triggered via a so called _job_, similiar as in the previous step **Generate Distribution and Deploy**.
 
-Now switch to the Jenkins in your browser [Jenkins]: https://localhost:8080/?auto_refresh=true 
+Now switch to the Jenkins in your browser https://localhost:8080/?auto_refresh=true 
 Trigger the job "runnable-remotelab-jsp-nao-calibration-master-runnable-toolkit-remotelab-nightly" (stopwatch icon)
 and follow the instructions on screen. You will be asked for whether you want to record postures for the left or right arm and then to move the easily 
 moveable arms (thus not stiffened) to the positions as indicated. Please execute the calibration for the left and
@@ -221,7 +222,7 @@ Great, you are done! Now you can run the experiment.
 
 It is assumed that you either did calibrate the postures or set up the Nao exactly as during the last time you calibrated.
 
-As before, switch to the Jenkins in your browser [Jenkins]: https://localhost:8080/?auto_refresh=true. 
+As before, switch to the Jenkins in your browser https://localhost:8080/?auto_refresh=true. 
 Trigger the job "runnable-remotelab-nao-physical-demo-master-runnable-toolkit-remotelab-nightly" (stopwatch icon), 
 enter the IP and port of the robot in the small popup window and confirm the dialog.
 
