@@ -98,30 +98,33 @@ Before proceeding, please execute this in a terminal in order to get your system
 sudo apt update && sudo apt upgrade
 </pre>
 
-When this process is finished, please proceed.
+When the update process is finished, please proceed. Note: since almost everything in this experiment
+is done in a web browser (e.g., experiment execution and orchestration) please use the
+**Firefox** web browser that is shipped with Ubuntu --- we verified every feature works with Firefox.
 
 # Deploying the Software Infrastructure for the Experiment
 
 ## Bootstrapping the CITK
 
-Note: For the following steps, please use the **Firefox** browser shipped with Ubuntu.
 We are using the CITK [4] to bootstrap your software experiment environment, please follow https://toolkit.cit-ec.uni-bielefeld.de/tutorials/bootstrapping
 tutorial (you might need to accept a SSL certificate when accessing the referenced web site, the browser might warn you).
 
-**Stop** after "Step #3: Expected Result", do **not** proceed to the next tutorial mentioned on the web site (Installing a Distribution). 
-You will need to execute the steps in the grey boxes.
+**Stop** after "Step #3: Expected Result", do **not** proceed to the next tutorial mentioned on the web site
+(Installing a Distribution). In general, you will need to execute the steps in the grey boxes in a terminal.
 
-After you've finished the above tutorial you should see something similar to the picture below when accessing your localhost https://localhost:8080/?auto_refresh=true 
+After you've finished the above tutorial you should see something similar to the picture below when accessing your
+localhost https://localhost:8080/?auto_refresh=true
 
-
-Please login (top right corner) using the credentials you chose when executing the "./create_user" step. **Don't** close the terminal
-in which your Jenkins is running. You are all set for now.
+Please login (top right corner) using the credentials you chose when executing the "./create_user" step.
+**Don't** close the terminal in which your Jenkins is running. You are all set for now.
 
 ![empty_jenkins](https://toolkit.cit-ec.uni-bielefeld.de/sites/toolkit.cit-ec.uni-bielefeld.de/files/tutorial_jenkins_new.jpg)
 
 ## Generate Distribution and Deploy
 
-We are now going the install all required software components. 
+We are now going to the install all required software components for you. This includes the software
+that is required in order to control the robot, as well as experiment execution and data acquisition. Yay!
+
 Please open a new terminal and execute the following steps.
 
 <pre>
@@ -129,8 +132,8 @@ mkdir -p $HOME/citk/dist && cd $HOME/citk/dist
 git clone https://opensource.cit-ec.de/git/citk .
 </pre>
 
-In the next step please substitute "{YOUR_USERNAME}" and {YOUR_PASSWORD} with the credentials in the "./create_user" (see section above)
-step and execute the command line below.
+In the next step please substitute "{YOUR_USERNAME}" and {YOUR_PASSWORD} with the credentials in
+the "./create_user" (see section above) step and execute the command line below.
 
 <pre>
 $HOME/citk/jenkins/job-configurator --on-error=continue -d $HOME/citk/dist/distributions/remotelab-nightly.distribution -m toolkit -D toolkit.volume=$HOME/citk/systems -u {YOUR_USERNAME} -a {YOUR_PASSWORD}
@@ -174,43 +177,57 @@ Now, go back to your browser: https://localhost:8080/?auto_refresh=true  You sho
  
 ![jenkins_done](https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/remote_lab_jobs.png)
 
-In order to deploy (install) the software system, the **only** thing you need to do is to click the "stopwatch" icon
+In order to deploy (install) the entire software system, the **only** thing you need to do is to click the "stopwatch" icon
 next to the build job "remotelab-nightly-toolkit-orchestration".
+
 The Jenkins will guide you to a next page that displays a dialog "ageLimit ..." **Just press the blue build button**.
 In order to get back to the overview page, simply click the top left Jenkins icon.
 
 
 ![jenkins_trigger](https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/trigger_job.png)
 
-Our toolchain will now install all required software components for you **automagically**. When it's done (this can take up to 10 minutes), 
-all, except for two, jobs in your Jenkins instance should turn from grey (haven't been built yet) to blue (successfully installed). 
+Our toolchain will now install all required software components for you **automagically**. When it's done
+(this can take up to 10 minutes) all, except for two, jobs in your Jenkins instance should turn from grey
+(haven't been built yet) to blue (successfully installed). You only need to install the system **once**.
 
 There will be  **TWO** "grey" jobs: "runnable-remotelab-nao-physical-demo-master-runnable-toolkit-remotelab-nightly" and
-"runnable-remotelab-jsp-nao-calibration-master-runnable-toolkit-remotelab-nightly" (is missing in the image below, don't worry...). 
-These jobs will be used later on to actually **RUN** your experiment. 
-How cool is that? Leave this part for now, we will setup the physical part now.
+"runnable-remotelab-jsp-nao-calibration-master-runnable-toolkit-remotelab-nightly" (the latter is missing in the image below,
+don't worry...).
+
+These jobs will be used later on to actually calibrate the robot and **RUN** your experiment.
+
+How cool is that?
+
+Leave this for now, we will now setup the physical parts.
 
 ![jenkins_trigger](https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/remote-lab-done.png)
 
 # Physical Experiment Setup
 
-Because two NAOS were available at Bielefeld, a symmetrical setup was installed in an otherwise empty office. The two monitors 
-were connected to the same workstation. The displays were set to mirror mode, showing the same image. 
+Because two NAOS were available at Bielefeld, a symmetrical setup was installed in an otherwise empty office.
+The two monitors were connected to the same workstation. The displays were set to mirror mode, showing the same image.
 
-Because having two NAOs is not given in every laboratory, we will describe a setup using just one NAO in the following. 
-The setup is easily adjustable by either moving the robot from one side to another depending on the random position condition or just placing it to the right or left of the participant.
-The viewing distance is taken from the original Stenzel paper (approx. 80cm). The NAO kneels (predefined resting posture by the manufacturer) 
-next to the participants on a table. The barycenter of the robot is approximately at elbow height of a sitting participant. 
-The participant and the robot each have their own keyboard of identical type. The keyboards are directly adjacent (touching) 
-and on the _same level_. For this to work, in our setup the table of the participant was higher than the table the robot is kneeling on 
-and the keyboard of the robot raised to the appropriate height. The posture of the robot's hand above the keyboard is predefined 
-in the _poses.xml_ file and is individually set up with a calibration program described later. 
-This is necessary because there might be little differences in positioning at the institutions and the angles of the NAO's motors might deviate from robot to robot. 
-The robot's head is turned to indicate that the robot is looking at the screen. 
+Because having two NAOs is not given in every laboratory, we will describe a setup using just **one** NAO in the following.
+The setup is easily adjustable by moving the robot from one side to another depending on the random position
+condition which is assigned automatically by our software.
+
+<img align="left" hspace="20" src="https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/pepper_setup_table.jpg" width=300px>
+<img src="https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/pepper_press.jpg" width=300px>
+
+The viewing distance is taken from the original Stenzel paper (approx. 80cm). The NAO kneels (predefined resting posture by
+the manufacturer) next to the participants on a table. The barycenter of the robot is approximately at elbow height of a
+sitting participant.
+
+The participant and the robot each have their own keyboard of identical type. The keyboards are directly adjacent (touching)
+and on the _same level_. The posture of the robot's hand above the keyboard is predefined and will be individually set up
+using a calibration program that will be introduced later. Calibration is necessary because there might be little
+differences in positioning at the institutions and the angles of the NAO's motors might deviate from robot to robot.
+The robot's head is turned towards the screen to indicate that the robot is looking at it.
 
 # Calibration procedure
 
-**During calibration, the robot's stiffness needs to be released. If the motors are stiff, release stiffness with two short chest button presses.**
+**During calibration, the robot's stiffness needs to be released. If the motors are stiff, release stiffness with
+two short chest button presses.**
 
 It is assumed that the robot is powered on and already connected to the network as described in "Hardware Requirements and Prerequisites".
 
