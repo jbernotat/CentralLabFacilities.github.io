@@ -246,8 +246,8 @@ In the calibration procedure there are four postures recorded : _prepose_, _safe
 The posture recording is triggered via a so called _job_ (in the Jenkins) that is explained in the following.
 
 Now, switch to the Jenkins in your browser https://localhost:8080/?auto_refresh=true
-Trigger the job "runnable-remotelab-jsp-nao-calibration-master-runnable-toolkit-remotelab-nightly" (stopwatch icon)
-and follow the instructions on screen.
+Log in and trigger the job "runnable-remotelab-jsp-nao-calibration-master-runnable-toolkit-remotelab-nightly" (stopwatch icon)
+, follow the instructions on screen.
 
 You will be asked for whether you want to record postures for the left or right
 arm and then to move the easily moveable arms (thus not stiffened) to the positions as indicated.
