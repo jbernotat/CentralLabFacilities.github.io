@@ -241,12 +241,15 @@ the experiment, will be recorded.
 If you have to move the robot in general (because, e.g., it is used by others) you should mark the exact foot
 position on the table with e.g. tape. Additionally, you have to set the robot to a stable hip-roll position.
 Remember the approximate angle. You can, e.g., align the back of the Nao with a book you put on the table for setup purposes.
+
 In the calibration procedure there are four postures recorded : _prepose_, _safepose_, _keyrelease_ and _keypress_.
-The posture recording is triggered via a so called _job_ (in the Jenkins).
+The posture recording is triggered via a so called _job_ (in the Jenkins) that is explained in the following.
 
 Now, switch to the Jenkins in your browser https://localhost:8080/?auto_refresh=true
 Trigger the job "runnable-remotelab-jsp-nao-calibration-master-runnable-toolkit-remotelab-nightly" (stopwatch icon)
-and follow the instructions on screen. You will be asked for whether you want to record postures for the left or right
+and follow the instructions on screen.
+
+You will be asked for whether you want to record postures for the left or right
 arm and then to move the easily moveable arms (thus not stiffened) to the positions as indicated.
 Please execute the calibration for the left and right arm (trigger the job two times, 1st time for left,
 second time for right arm).
