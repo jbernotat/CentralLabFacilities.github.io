@@ -73,7 +73,7 @@ ping ROBOT_IP
 </pre>
 
 <img src="https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/pepper_cable.jpg" width=400px>
-<img  style="float:right" src="https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/pepper_power.jpg" width=400px>
+<img style="float:right;" src="https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/pepper_power.jpg" width=400px>
 
 The monitors used to present the stimuli to the robot and the subject (at Bielefeld University) was a 24-inch 
 Dell U2412M with an 16:10 IPS panel and a resolution of 1920:1200 @ 60 Hz. The refresh rate of this type is 
@@ -84,7 +84,7 @@ The exact physical setup will be described later. These are just the requirement
 ## Software Requirements and Prerequisites
 
 In general, the software for this experiment has been designed and tested on Ubuntu Linux (16.04). 
-That's a prerequisite. In case you a not familiar with *nix operating systems, it might be helpful to ask 
+**That's a prerequisite**. In case you a not familiar with *nix operating systems, it might be helpful to ask 
 someone in your lab who is experienced to help you setting up the infrastructure. If you have basic knowledge 
 about *nix operating systems, the next steps will be a "piece of cake".
  
@@ -92,7 +92,7 @@ Download [Ubuntu 16.04]: https://www.ubuntu.com/download/desktop/contribute?vers
 and install it on the laptop/PC. If you already have a machine with Ubuntu 16.04 installed that meets the requirements, 
 check if you have sudo permissions, you will need them in the following steps.
 
-Before proceeding, please execute this in a terminal to get your system up to date
+Before proceeding, please execute this in a terminal in order to get your system up to date
 
 <pre>
 sudo apt update && sudo apt upgrade
