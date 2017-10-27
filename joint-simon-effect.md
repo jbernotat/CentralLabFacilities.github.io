@@ -46,23 +46,34 @@ without explicit belief manipulation of the subjects (cf. [2] "biologically insp
 ## Hardware Requirements and Prerequisites
 
 Any recent standard NAO robot platform (acquired within the last 2-3 years) should suffice. 
-The software interface to the robot is downward compatible to NAOQi 1.x.x.
+The software interface to the robot is downward compatible to NAOQi 1.x.x in this experiment.
 
-Furthermore, a recent desktop PC or laptop is required. The PC/laptop needs to have access to the internet (for software 
-installation only, running the experiment does require internet connection for storing the experiment data on a central server for mutual access and comparability.
-Local data storage is possible although not recommended. At least two cpu cores, and 2 GB Ram 
-(4 GB recommended) should suffice. Additionally, it is required that the robot and the laptop/PC are connected 
-to the same network/subnet. We also strongly recommend a wired network connection for both, the robot 
-and the laptop. If there is absolutely no chance of establishing a wired connection, WiFi will also work of course. 
-However, since WiFi usually introduces a higher latency and instability than a wired connection, we disadvise using it.
+Furthermore, a recent desktop PC or laptop is required. The PC/laptop initially requires an
+internet connection for our automated software installation, running the experiment does not require internet access.
+
+At least two cpu cores, and 2 GB Ram (4 GB recommended) should suffice. Additionally, 
+it is required that the robot and the laptop/PC are connected to the same network (subnet). 
+
+We also strongly recommend a wired network connection for both, the robot 
+and the laptop. If there is absolutely no chance of establishing a wired connection, 
+WiFi will also work. However, since WiFi usually introduces a higher 
+latency and instability than a wired connection, we disadvise using it.
 
 In order to check if the laptop/PC 'can talk to' the robot, simply plug a network cable
-into the NAO (back of the head, open the service hatch first). Startup the laptop connected with the NAO. 
-As soon as the Laptop is up and running, press the button the robot's chest (single long press) to initiate the boot sequence. This will take a few minutes
-When the NAO is ready (startup jingle is over) press the chest button of the robot again (single short press). The robot will tell you
+into the NAO (back of the head, open the service hatch first). Startup the laptop connected to
+the robot. As soon as the laptop is up and running, press the robot's chest button (single long press) 
+to initiate the boot sequence. This will take a few minutes. When the NAO is ready (startup jingle is over) 
+press the chest button of the robot again (single short press). The robot will tell you
 its IP address. On the laptop/PC you can now ping the robot's IP, check if you get a "pong". 
+It is also recommended to leave the power cord of the robot plugged during the experiment.
+This is however not mandatory.
+
+<pre>
+ping ROBOT_IP
+</pre>
 
 <img src="https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/pepper_cable.jpg" width=400px>
+<img  style="float:right" src="https://github.com/CentralLabFacilities/CentralLabFacilities.github.io/blob/master/images/pepper_power.jpg" width=400px>
 
 The monitors used to present the stimuli to the robot and the subject (at Bielefeld University) was a 24-inch 
 Dell U2412M with an 16:10 IPS panel and a resolution of 1920:1200 @ 60 Hz. The refresh rate of this type is 
