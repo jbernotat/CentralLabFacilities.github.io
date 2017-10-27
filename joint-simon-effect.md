@@ -260,8 +260,8 @@ Great, you are done! Now you can run the experiment.
 
 # Executing the Experiment
 
-It is assumed that you either did calibrate the postures or (if you continue the experiment) set up the Nao exactly
-like the last time you calibrated.
+It is assumed that you either just calibrated the robot or (if you continue the experiment on another day)
+set up the Nao exactly like the last time you calibrated.
 
 Switch to the Jenkins in your browser (you need to be logged in) https://localhost:8080/?auto_refresh=true.
 Trigger the job "runnable-remotelab-nao-physical-demo-master-runnable-toolkit-remotelab-nightly" (stopwatch icon), 
