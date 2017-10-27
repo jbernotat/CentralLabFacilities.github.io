@@ -229,51 +229,58 @@ The robot's head is turned towards the screen to indicate that the robot is look
 **During calibration, the robot's stiffness needs to be released. If the motors are stiff, release stiffness with
 two short chest button presses.**
 
-It is assumed that the robot is powered on and already connected to the network as described in "Hardware Requirements and Prerequisites".
+It is assumed that the robot is powered on and already connected to the network as described in "Hardware Requirements
+and Prerequisites".
 
 Assuming you set up the experiment as described above you should check the robot's IP one last time. You can do this
 by pressing the chest button. Remember the IP address, e.g., 192.168.1.30. You will need it in the following steps. 
 
-During the calibration procedure the arm postures for the key press movement (left and right side), obviously needed in the 
-experiment, will be recorded.
+During the calibration procedure the arm postures for the key press movement (left and right side), obviously needed in
+the experiment, will be recorded.
 
-If you have to move the robot in general (because e.g. the robot is used by others) you should mark the exact foot position on 
-the table with e.g. tape. Additionally, you have to set the robot to a stable hip-roll position. 
-Remember the approximate angle. You can e.g. align the back of the Nao with a book you put on the table for setup purposes. In the calibration procedure there are four postures recorded : _prepose_, _safepose_, _keyrelease_ and _keypress_. 
-The posture recording is triggered via a so called _job_, similiar as in the previous step **Generate Distribution and Deploy**.
+If you have to move the robot in general (because, e.g., it is used by others) you should mark the exact foot
+position on the table with e.g. tape. Additionally, you have to set the robot to a stable hip-roll position.
+Remember the approximate angle. You can, e.g., align the back of the Nao with a book you put on the table for setup purposes.
+In the calibration procedure there are four postures recorded : _prepose_, _safepose_, _keyrelease_ and _keypress_.
+The posture recording is triggered via a so called _job_ (in the Jenkins).
 
-Now switch to the Jenkins in your browser https://localhost:8080/?auto_refresh=true 
+Now, switch to the Jenkins in your browser https://localhost:8080/?auto_refresh=true
 Trigger the job "runnable-remotelab-jsp-nao-calibration-master-runnable-toolkit-remotelab-nightly" (stopwatch icon)
-and follow the instructions on screen. You will be asked for whether you want to record postures for the left or right arm and then to move the easily 
-moveable arms (thus not stiffened) to the positions as indicated. Please execute the calibration for the left and
-right arm (trigger the job two times, 1st time for left, second time for right arm).
+and follow the instructions on screen. You will be asked for whether you want to record postures for the left or right
+arm and then to move the easily moveable arms (thus not stiffened) to the positions as indicated.
+Please execute the calibration for the left and right arm (trigger the job two times, 1st time for left,
+second time for right arm).
 
 Great, you are done! Now you can run the experiment.
 
 # Executing the Experiment
 
-It is assumed that you either did calibrate the postures or set up the Nao exactly as during the last time you calibrated.
+It is assumed that you either did calibrate the postures or (if you continue the experiment) set up the Nao exactly
+like the last time you calibrated.
 
-As before, switch to the Jenkins in your browser https://localhost:8080/?auto_refresh=true. 
+Switch to the Jenkins in your browser (you need to be logged in) https://localhost:8080/?auto_refresh=true.
 Trigger the job "runnable-remotelab-nao-physical-demo-master-runnable-toolkit-remotelab-nightly" (stopwatch icon), 
 enter the IP and port of the robot in the small popup window and confirm the dialog.
 
-Now, in another browser or a new tab enter the following address into the address bar: http://localhost:5000/. 
-You should see the experiment setup slide! 
+Now, in another browser (Firefox) or a new tab enter the following address into the address bar: http://localhost:5000/.
 
-As the default values align with what we would enter, you don't need to enter anything on this slide. Just click "submit answers". 
-On the next slide, you have to choose on which side the robot is kneeling. Choose right or left and - congratulations - the setup is done! 
-The robot should stiffen and move the correct arm towards the keyboard. 
+You should see the first experiment setup slide!
 
-Now, let the subject do the experiment!
+You don't need to enter anything on this slide. Just click "submit answers".
+On the next slide, you have to choose on which side the robot is kneeling. Choose right or left and - congratulations -
+the setup is done! The robot should stiffen and move the correct arm towards the keyboard.
 
-You don't need to re-run the "runnable-remotelab-nao-physical-demo-master-runnable-toolkit-remotelab-nightly" job per participant.
-After each trial the browser window will return to its initial state (new subject).
+Now, you can get the subject and start the experiment! The subject should not be present during the setup of the robot.
+
+In general, you don't need to re-run the "runnable-remotelab-nao-physical-demo-master-runnable-toolkit-remotelab-nightly"
+job per participant. After each trial the browser window will return to its initial state (new subject).
+
 The job will keep running until you **explicitly** stop it using the "[x]" button next to the running job (Build Queue).
 
-When you're done for the day, you may shut down everything (if you want to). When you
-continue the next day, you just need to setup the NAO (if it has been moved), start the Jenkins using
-the "./start_jenkins" script like you have done it before and trigger the "runnable-remotelab-nao-physical-demo-master-runnable-toolkit-remotelab-nightly"
+When you're done for the day, you **may** shut down everything (if you want to). When you continue the next day,
+you just need to setup the NAO (if it has been moved), start the Jenkins using the "./start_jenkins" script like
+you have done it before and trigger the "runnable-remotelab-nao-physical-demo-master-runnable-toolkit-remotelab-nightly"
+
 Voila, you're all set.
 
 # Subjects
@@ -300,7 +307,9 @@ questions answered.
 
 At the end of the experiment, after the participant is done, the last slide asks you to download the experiment data as a .csv 
 file with the unique id of the participant as file name.
-Please store this file on your computer and regularly backup your data! 
+
+Please store this file on your computer and regularly **backup your data**!
+
 Soon we will offer a solution to store the data on a database we provide. Until then, it is stored locally.
 If you ever forget to store the data or refresh the browser before downloading, at the beginning of the next 
 experiment you can still download the file.
