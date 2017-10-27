@@ -62,6 +62,8 @@ As soon as the Laptop is up and running, press the button the robot's chest (sin
 When the NAO is ready (startup jingle is over) press the chest button of the robot again (single short press). The robot will tell you
 its IP address. On the laptop/PC you can now ping the robot's IP, check if you get a "pong". 
 
+![nao_cable](https://toolkit.cit-ec.uni-bielefeld.de/sites/toolkit.cit-ec.uni-bielefeld.de/files/pepper_cable.jpg){:width="200px"}
+
 The monitors used to present the stimuli to the robot and the subject (at Bielefeld University) was a 24-inch 
 Dell U2412M with an 16:10 IPS panel and a resolution of 1920:1200 @ 60 Hz. The refresh rate of this type is 
 8ms (gray to gray). The brightness was set to 100% (for this display type: 300 cd/m²). 
