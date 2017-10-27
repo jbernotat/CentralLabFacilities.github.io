@@ -251,7 +251,8 @@ Log in and trigger the job "runnable-remotelab-jsp-nao-calibration-master-runnab
 , follow the instructions on screen.
 
 You will be asked for whether you want to record postures for the left or right
-arm and then to move the easily moveable arms (thus not stiffened) to the positions as indicated.
+arm and then to move the easily moveable arms (thus not stiffened) to the positions as depicted in the program.
+
 Please execute the calibration for the left and right arm (trigger the job two times, 1st time for left,
 second time for right arm).
 
