@@ -98,6 +98,15 @@ Before proceeding, please execute this in a terminal in order to get your system
 sudo apt update && sudo apt upgrade
 </pre>
 
+Enable additional repositories.
+
+<pre>
+sudo apt-get install software-properties-common
+sudo apt-add-repository universe
+sudo apt-get update
+sudo apt upgrade
+</pre>
+
 When the update process is finished, please proceed. Note: since almost everything in this experiment
 is done in a web browser (e.g., experiment execution and orchestration) please use the
 **Firefox** web browser that is shipped with Ubuntu --- we verified every feature works with Firefox.
